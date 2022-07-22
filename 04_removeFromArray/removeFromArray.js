@@ -1,10 +1,14 @@
 const removeFromArray = function(items, ...values) {
     let result = [];
     for (const item of items) {
+        let count = 0;
         for (const value of values) {
             if (item !== value) {
-                result.push();
+                count += 1;
             }
+        }
+        if (count == values.length) {
+            result.push(item);
         }
     }
     return result;
